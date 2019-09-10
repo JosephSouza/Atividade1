@@ -1,0 +1,128 @@
+package atletinha;
+
+import java.util.Scanner;
+
+
+public class ProgramaPrincipal {
+   
+    public static void menu(){
+        System.out.println("*********************************************\r\n" +
+          "\tMENU PRINCIPAL\r\n" +
+          "*********************************************");
+        System.out.println("1 – Criar Objeto");
+        System.out.println("2 – Criar Objeto Inserindo Dados Pelo Construtor");
+        System.out.println("3 – Inserir/Alterar Dados Do Objeto");
+        System.out.println("4 – Sair Do Sistema");
+     
+        System.out.println("Opcao:");
+    }
+
+    public static void inclui(){
+        System.out.println("\t Dados do Cliente.");
+        ;
+    }
+   
+    public static void altera(){
+        System.out.println("\t Criar Objeto Inserindo dados Pelo Construtor.");
+    }
+   
+    public static void exclui(){
+        System.out.println("\t Inserir/Alterar Dados Do Objeto.");
+    }
+   
+    
+    Atleta atleta01 = null;
+    public static void main(String[] args) {
+     
+     Atleta atleta01 = new Atleta("","","","","", "",0,2019, 2019,"");
+     Atleta atleta02 = new Atleta();
+
+     atleta02.setAltura("1,80");
+     atleta02.setNome("Robervaldo");
+     atleta02.setAnoNascimento(1988);
+     atleta02.setPeso("80");
+	 atleta02.setGenero("M");
+     atleta02.setInicioCarreira(1999);
+     atleta02.setSalario(1000);
+     atleta02.setNacionalidade("Brasileiro");
+     atleta02.setModalidade("100 metros");
+     
+     
+
+     int opcao;
+
+     
+     
+     Scanner entrada = new Scanner(System.in);{
+       
+        do{
+            menu();
+            opcao = entrada.nextInt();
+           
+            switch(opcao){
+            case 1:
+
+             System.out.println("Nome: " + atleta01.getNome());
+             System.out.println("Nacionalidade: " + atleta01.getNacionalidade());
+             System.out.println("Genero: " + atleta01.getGenero());
+             System.out.println("Modalidade: " + atleta01.getModalidade());
+             System.out.println("Peso: " + atleta01.getPeso());
+             System.out.println("Altura: " + atleta01.getAltura());
+             System.out.println("Salário base: " + atleta01.getSalario());
+             System.out.println("Idade: " + atleta01.calcularIdade());
+             System.out.println("Tempo de Carreira: " + atleta01.calcularTempoCarreira());
+             atleta01.calcularSalario(1000, 100);
+             System.out.println("Premiação Primeiro Colocado: "  + atleta01.getValorCalculado());
+             
+
+             break;
+               
+            case 2:
+             System.out.println("Nome: " + atleta02.getNome());
+             System.out.println("Nacionalidade: " + atleta02.getNacionalidade());
+             System.out.println("Genero: " + atleta02.getGenero());
+             System.out.println("Modalidade: " + atleta02.getModalidade());
+             System.out.println("Peso: " + atleta02.getPeso() + "kg");
+             System.out.println("Altura: " + atleta02.getAltura());
+             System.out.println("Salário base: " + atleta02.getSalario());
+             System.out.println("Idade: " + atleta02.calcularIdade());
+             System.out.println("Tempo de Carreira: " + atleta02.calcularTempoCarreira());
+
+                break;
+               
+            case 3:
+             System.out.print("\tInserir Dados: ");
+             System.out.print("\n\nInserir Nome: ");
+             atleta01.setNome(entrada.next());
+             System.out.print("Inserir Altura: ");
+             atleta01.setAltura(entrada.next());
+             System.out.print("Inserir Ano de Nascimento: ");
+             atleta01.setAnoNascimento(entrada.nextInt());
+             System.out.print("Inserir Peso: ");
+             atleta01.setPeso(entrada.next());
+             System.out.print("Inserir Gênero: ");
+             atleta01.setGenero(entrada.next());
+             System.out.print("Inserir Inicio da Carreira: ");
+             atleta01.setInicioCarreira(entrada.nextInt());
+             System.out.print("Inserir Salario: ");
+             atleta01.setSalario(entrada.nextLong());
+             System.out.print("Inserir Nacionalidade: ");
+             atleta01.setNacionalidade(entrada.next());
+             System.out.print("Inserir Modalidade: ");
+             atleta01.setModalidade(entrada.next());
+                break;
+               
+            case 4:
+               System.exit(1);
+                break;
+           
+            default:
+                System.out.println("Opção inválida.");
+            }
+        } while(opcao != 0);
+    }
+}
+    
+    
+    
+}
